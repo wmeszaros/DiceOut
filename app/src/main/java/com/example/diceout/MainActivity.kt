@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var dice: ArrayList<Int>
     lateinit var diceImageViews: ArrayList<ImageView>
+    lateinit var scoreText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         score = 0
 
         rollResult = findViewById(R.id.rollResult)
+        scoreText = findViewById(R.id.scoreText)
         rollButton = findViewById(R.id.rollButton)
 
         rand = Random
@@ -87,8 +89,20 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val msg = "You rolled a $die1 and a $die2 and a $die3"
+        var msg = ""
+        if (die1 == die2 && die1 == die3) {
+            val scoreDelta = 100 * die1
+            msg = "You rolled a triple " + die1 + "! You score " + scoreDelta + " points!"
+            score += scoreDelta
+        } else if (die1 == die2 || die1 == die3 || die2 == die3) {
+            val scoreDelta = 50 * die1
+            msg = "You rolled doubles for 50 points!"
+            score += 50
+        } else {
+            msg = "You didn't score this roll. Try again!"
+        }
         rollResult.setText(msg)
+        scoreText.setText("Score: " + score)
 
 //        var num: Int = rand.nextInt(6) + 1
 //        var randomValue = "Number generated: $num"
