@@ -21,7 +21,6 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     lateinit var rollResult: TextView
-    lateinit var rollButton: Button
     var score: Int = 0
     lateinit var rand: Random
     var die1: Int = 0
@@ -38,8 +37,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            rollDice(view)
         }
 
         //Set initial score to zero
@@ -47,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         rollResult = findViewById(R.id.rollResult)
         scoreText = findViewById(R.id.scoreText)
-        rollButton = findViewById(R.id.rollButton)
 
         rand = Random
 

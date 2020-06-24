@@ -18,21 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/rollButton"
-        android:onClick="rollDice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
-        android:text="@string/roll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/die2Image" />
-
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
