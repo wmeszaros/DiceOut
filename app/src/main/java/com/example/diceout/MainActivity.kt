@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         var die1Image = findViewById<ImageView>(R.id.die1Image)
         var die2Image = findViewById<ImageView>(R.id.die2Image)
         var die3Image = findViewById<ImageView>(R.id.die3Image)
+        var dummy = false
 
         diceImageViews = ArrayList<ImageView>()
         diceImageViews.add(die1Image)
